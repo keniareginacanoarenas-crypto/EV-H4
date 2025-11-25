@@ -1,0 +1,53 @@
+/* Archivo base: pega tu CSS aquí o importa tus archivos adicionales */
+
+:root{
+  --bg:#ffffff;
+  --fg:#111827;
+  --accent:#0ea5e9;
+  --red:#d62828;
+  --black:#000000;
+}
+html,body{height:100%;margin:0;padding:0;font-family:Segoe UI, Roboto, Arial, sans-serif;background:var(--bg);color:var(--fg);}
+header{background:var(--accent);color:#fff;padding:12px 20px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+nav a{color:#fff;text-decoration:none}
+main{padding:24px}
+section{padding:48px 0;border-bottom:1px solid #eee}
+[data-animate="true"]{opacity:0;transform:translateY(8px);transition:all .6s ease}
+[data-animate="true"].in-view{opacity:1;transform:none}
+
+/* Notas: Si quieres que tu CSS esté en otra carpeta, ajusta el enlace en html/index.html */
+
+/* Utilities y estilos específicos usados por el HTML */
+.bg-red{background:var(--red)!important}
+.text-red{color:var(--red)!important}
+.text-black{color:var(--black)!important}
+.font-bebas{font-family:'Bebas Neue', sans-serif}
+.font-roboto{font-family:'Roboto', sans-serif}
+.btn-black{background:#0b0b0b;color:#fff;border:none}
+.btn-black:hover{background:#111}
+
+.profile-img{transition:transform .3s ease}
+.profile-img:hover{transform:scale(1.03)}
+
+.mood-card img{display:block}
+.mood-card .overlay{position:absolute;inset:0;opacity:0;transition:opacity .25s ease;background:rgba(214,40,40,0.85)}
+.mood-card:hover .overlay{opacity:1}
+
+.work-card{border:6px solid var(--red)}
+.work-card .hidden-content{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.work-card:hover .hidden-content{max-height:200px}
+
+/* Make work cards clearly clickable when wrapped in a link */
+a.work-link{ text-decoration: none; color: inherit; display: block; }
+a.work-link .work-card{ cursor: pointer; }
+a.work-link:focus, a.work-link:active { outline: none; }
+
+/* Small helpers */
+.hover-red:hover{color:var(--red)!important}
+
+/* Responsive tweaks */
+@media (max-width:768px){
+  nav ul{flex-direction:column}
+  .profile-img{width:200px;height:200px}
+}
